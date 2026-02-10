@@ -1,0 +1,1 @@
+global using ConsoleApp1.Domain;
