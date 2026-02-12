@@ -35,3 +35,6 @@ catch (DomainException e)
 lesson.PrintAttendance();
 
 lesson.Members.First().Address?.City = "Breda";
+
+Console.WriteLine("Press any key");
+Console.ReadLine();
