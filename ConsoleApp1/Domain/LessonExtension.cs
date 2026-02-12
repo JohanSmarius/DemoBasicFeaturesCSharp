@@ -1,4 +1,4 @@
-namespace ConsoleApp1;
+namespace ConsoleApp1.Domain;
 
 public static class LessonExtension
 {
@@ -8,8 +8,6 @@ public static class LessonExtension
         {
             foreach (var lessonMember in lesson.Members)
             {
-                
-                
                 Console.WriteLine($"{lessonMember.NameToUpper} - {lessonMember.Email} - {lessonMember.Birthdate} - {lessonMember.Address?.FullAddress ?? "No address on file"}");
             }
         }

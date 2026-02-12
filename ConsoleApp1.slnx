@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="ConsoleApp1/ConsoleApp1.csproj" />
+  <Project Path="Shared/Shared.csproj" />
+  <Project Path="WebApplication1/WebApplication1.csproj" />
 </Solution>

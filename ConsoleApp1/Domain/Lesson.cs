@@ -1,4 +1,4 @@
-namespace ConsoleApp1;
+namespace ConsoleApp1.Domain;
 
 public class Lesson(int id, DateTime moment, int maxCapacity)
 {
