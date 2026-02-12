@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace ConsoleApp1.Domain;
 
 public class Lesson(int id, DateTime moment, int maxCapacity)
@@ -8,6 +10,8 @@ public class Lesson(int id, DateTime moment, int maxCapacity)
 
     public int MaxCapacity { get; set; } = maxCapacity;
 
+    public Instructor? Instructor { get; set; }
+
     private List<Member> _members  = [];
 
     public IEnumerable<Member> Members => _members;
@@ -15,6 +19,11 @@ public class Lesson(int id, DateTime moment, int maxCapacity)
     public void AddMember(Member member)
     {
         ArgumentNullException.ThrowIfNull(member, nameof(member));
+
+        if (_members.Count == MaxCapacity)
+        {
+            throw new DomainException("Lesson is full");
+        }
 
         if (_members.All(m => m.Name != member.Name))
         {

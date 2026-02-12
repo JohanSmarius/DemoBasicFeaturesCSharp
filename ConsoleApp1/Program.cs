@@ -16,10 +16,21 @@ var member2 = new Member("Jane Doe",
     new DateTime(1990, 05, 20, 10, 0, 0), "jane.doe@example.com");
 Console.WriteLine(member2.Name);
 
-var lesson = new Lesson(1, new DateTime(2020, 05, 20), 2);
+var instructor = new Instructor("John Doe", 12345);
 
-lesson.AddMember(member2);
-lesson.AddMember(member);
+var lesson = new Lesson(1, new DateTime(2020, 05, 20), 2);
+lesson.Instructor = instructor;
+
+try
+{
+    lesson.AddMember(member2);
+    lesson.AddMember(member);
+}
+catch (DomainException e)
+{
+    Console.WriteLine(e);
+    throw;
+}
 
 lesson.PrintAttendance();
 
